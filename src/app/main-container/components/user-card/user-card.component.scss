@@ -1,0 +1,50 @@
+
+.card {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 0 32px -16px rgb(0, 0, 0, .5);
+  padding: 2em;
+  gap: 1rem;
+  border-radius: 10px;
+}
+
+.card__figure {
+  height: 40%;
+}
+
+.card__img {
+  width: 90%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card__email {
+  padding: .5em 0;
+}
+
+.card__buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.card__action {
+  display: inline-block;
+  background: #71717A;
+  padding: 10px 15px;
+  margin-top: 1em;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: auto;
+  cursor: pointer;
+}

@@ -1,0 +1,34 @@
+@let userLocal = user();
+
+@if (userLocal) {
+  <div class="card">
+
+    <figure class="card__figure">
+      <img
+        class="card__img"
+        [ngSrc]="userLocal.avatar"
+        width="200"
+        height="200"
+        alt="userLocal.first_name"
+        priority
+      />
+    </figure>
+
+    <div class="card__texts">
+      <h2 class="card__title">{{ userLocal.first_name }} {{ userLocal.last_name }}</h2>
+      <p class="card__email">{{ userLocal.email }}</p>
+    </div>
+
+    <div class="card__buttons">
+      <a class="card__action" (click)="removeUser(userLocal.id)">
+        <i class='bx bxs-user-minus'></i>
+        Eliminar
+      </a>
+
+      <a class="card__action" [routerLink]="['/add-edit-user/' + userLocal.id]">
+        <i class='bx bxs-user-detail'></i>
+        Editar
+      </a>
+    </div>
+  </div>
+}

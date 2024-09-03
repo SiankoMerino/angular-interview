@@ -1,0 +1,47 @@
+<div class="user-add-container">
+  <form class="form" [formGroup]="userForm()" (ngSubmit)="onSubmit()">
+    <section class="form__register">
+      <a class="form__back" [routerLink]="['/users']">
+        <i class='bx bxs-left-arrow-circle'></i>
+      </a>
+      <h2 class="form__title">{{ userToEdit().first_name ? "Editar Usuario" : "Agregar Usuario" }}</h2>
+      <div class="form__inputs">
+        <app-custom-input
+          label="Nombre:"
+          [control]="$any(userForm().get('first_name'))"
+          placeholder=" "
+          type="text"
+          errorMessage="Nombre es requerido"
+        />
+
+        <app-custom-input
+          label="Apellido:"
+          [control]="$any(userForm().get('last_name'))"
+          placeholder=" "
+          type="text"
+          errorMessage="Apellido es requerido"
+        />
+
+        <app-custom-input
+          label="Correo:"
+          [control]="$any(userForm().get('email'))"
+          placeholder=" "
+          type="email"
+          errorMessage="Email es requerido"
+        />
+
+        <app-custom-input
+          label="Avatar:"
+          [control]="$any(userForm().get('avatar'))"
+          placeholder=" "
+          type="text"
+          errorMessage="Avatar es requerido"
+        />
+
+        <button class="form__submit" type="submit" [disabled]="userForm().invalid">
+          {{ userToEdit().first_name ? "Editar Usuario" : "Agregar Usuario" }}
+        </button>
+      </div>
+    </section>
+  </form>
+</div>

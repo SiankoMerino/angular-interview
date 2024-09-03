@@ -1,0 +1,26 @@
+<nav class="nav">
+  <section class="nav__container container">
+    <figure class="nav__log">
+      <h2 class="nav__title">CRUD en Angular</h2>
+    </figure>
+    <div class="nav__links">
+      <a class="nav__link" [routerLink]="['/add-edit-user']">
+        <i class='bx bxs-user-plus'></i>
+        Agregar
+      </a>
+    </div>
+  </section>
+</nav>
+<div class="user-grid">
+  @defer (when store.users().length) {
+    @for (usr of store.users(); track usr.id) {
+      @defer (on viewport) {
+        <app-user-card [user]="usr"/>
+      } @placeholder {
+        <div class="placeholder">...loading</div>
+      }
+    }
+  }@placeholder {
+    <div class="placeholder">...Loading</div>
+  }
+</div>

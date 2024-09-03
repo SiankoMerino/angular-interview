@@ -1,0 +1,43 @@
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.nav {
+  background: #143d64;
+  height: var(--height-nav);
+  color: #fff;
+}
+
+.nav__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.nav__link {
+  background: #2188d6;
+  display: inline-block;
+  padding: 10px 10px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.nav__link:hover {
+  background: #136bb6;
+}
+
+
+
+
